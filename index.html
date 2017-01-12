@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Blueimp Wistia Upload</title>
+    
+    <!-- VENDOR STYLES -->
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap-3.3.6.min.css">
+
+    <!-- APP STYLES -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Blueimp Wistia Upload</h3>
+          <!-- DIRECTIVE IN ACTION  -->
+          <uploadfile id="fileupload" wistiapass="1eb31cc7a43b3c6549e449ab9c862f97b60a008d734500f9d1204a266f178110" />
+        </div>
+      </div>
+    </div>
+
+    <!-- VENDOR LIBRARIES -->
+    <script src="lib/jquery/jquery-1.11.3.min.js"></script>
+    <script src="lib/blueimp/jquery.ui.widget.js"></script>
+    <script src="lib/blueimp/jquery.iframe-transport.js"></script>
+    <script src="lib/blueimp/jquery.fileupload.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/bootstrap/bootstrap-3.3.6.min.js"></script>
+
+    <!-- APP LIBRARIES -->
+    <script src="app.js"></script>
+    <script src="uploadFileComponent.js"></script>
+	
+	<script type="text/ng-template" id="upld.html">
+		<div>
+		  <span class="btn btn-primary btn-file">
+		    Upload File<input id="{{$ctrl.id}}_input" class="btn" type="file" name="file" data-url="https://upload.wistia.com">
+		  </span>
+		  <div class="progress">
+		    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" ng-style="{'width': progress + '%' }"></div>
+		  </div>
+		  <span >Status: {{status}}</span>
+	  </br>
+		  <iframe ng-src="{{url}}" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="640" height="360" ng-show="url != ''"></iframe>
+		</div>
+	</script>
+	
+  </body> 
+</html>
