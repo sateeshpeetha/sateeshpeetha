@@ -10,12 +10,12 @@
 	        id: "@id",
 	        wistiaPassword: "@wistiapass"
 	      },
-		  controller:link
+		  controller:upldCtrl
 		
     });
 
  
-    function link($scope, $element, $attrs,$timeout,$http,$sce) {
+    function upldCtrl($scope, $element, $attrs,$timeout,$http,$sce) {
 		
 	  var self = this;
       $scope.hashId   = '';
